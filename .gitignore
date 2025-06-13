@@ -11,6 +11,6 @@ dist
 
 # Env files
 **/.env
-
+**/.env.e2e
 # Logs
 *.log
