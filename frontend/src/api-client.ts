@@ -3,9 +3,11 @@ import type { RegisterFormData } from "./pages/Register";
 import { API_BASE_URL } from "./constants/env";
 import type { SignInFormData } from "./pages/SignIn";
 
-const base_url = API_BASE_URL || "";
+const base_url = API_BASE_URL ?? "";
 
 export const register = async (formData: RegisterFormData) => {
+  console.log("base url: ", base_url);
+
   const response = await fetch(`${base_url}/api/users/register`, {
     method: "POST",
     credentials: "include",
