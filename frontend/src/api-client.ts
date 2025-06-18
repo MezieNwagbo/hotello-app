@@ -44,7 +44,7 @@ export const signIn = async (formData: SignInFormData) => {
 };
 
 export const validateToken = async () => {
-  const response = await fetch(`${API_BASE_URL}/api/auth/validate-token`, {
+  const response = await fetch(`${base_url}/api/auth/validate-token`, {
     credentials: "include",
   });
 
@@ -55,7 +55,7 @@ export const validateToken = async () => {
 };
 
 export const logout = async () => {
-  const response = await fetch(`${API_BASE_URL}/api/auth/logout`, {
+  const response = await fetch(`${base_url}/api/auth/logout`, {
     credentials: "include",
     method: "POST",
   });
@@ -63,4 +63,18 @@ export const logout = async () => {
   if (!response.ok) {
     throw new Error("Error during sign out");
   }
+};
+
+export const addMyHotel = async (hotelFormData: FormData) => {
+  const response = await fetch(`${base_url}/api/my-hotels`, {
+    method: "POST",
+    credentials: "include",
+    body: hotelFormData,
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to add hotel");
+  }
+
+  return response.json();
 };
