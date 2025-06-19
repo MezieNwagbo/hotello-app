@@ -2,6 +2,7 @@ import type { RegisterFormData } from "./pages/Register";
 
 import { API_BASE_URL } from "./constants/env";
 import type { SignInFormData } from "./pages/SignIn";
+import type { HotelType } from "../../backend/src/shared/types";
 
 const base_url = API_BASE_URL ?? "";
 
@@ -72,6 +73,16 @@ export const addMyHotel = async (hotelFormData: FormData) => {
     body: hotelFormData,
   });
 
+  if (!response.ok) {
+    throw new Error("Failed to add hotel");
+  }
+  return response.json();
+};
+
+export const fetchMyHotels = async (): Promise<HotelType[]> => {
+  const response = await fetch(`${base_url}/api/my-hotels`, {
+    credentials: "include",
+  });
   if (!response.ok) {
     throw new Error("Failed to add hotel");
   }

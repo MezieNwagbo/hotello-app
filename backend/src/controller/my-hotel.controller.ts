@@ -1,4 +1,4 @@
-import { HotelType } from "../models/hotel.model";
+import { HotelType } from "../shared/types";
 import { AsynFunctionType } from "../shared/types";
 import cloudinary from "cloudinary";
 import Hotel from "../models/hotel.model";
@@ -34,5 +34,16 @@ export const addHotelHandler: AsynFunctionType = async (req, res) => {
     res
       .status(INTERNAL_SERVER_ERROR)
       .json({ message: "Internal server error" });
+  }
+};
+
+export const getHotelHandler: AsynFunctionType = async (req, res) => {
+  try {
+    const hotels = await Hotel.find({ userId: req.userId });
+    res.json(hotels);
+  } catch (error) {
+    console.log(error);
+
+    res.status(500).json({ message: "Internal server error" });
   }
 };
