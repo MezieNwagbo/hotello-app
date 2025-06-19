@@ -9,7 +9,7 @@ const Footer = () => {
         className={`${containerClass} mx-auto flex justify-between items-center`}
       >
         <span className="text-3xl text-white font-bold tracking-tight">
-          <Link to="/">MernHolidays.com</Link>
+          <Link to="/">Hotello</Link>
         </span>
         <span className="flex gap-4 text-white font-bold tracking-tight">
           <p>Privacy policy</p>
