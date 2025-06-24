@@ -4,6 +4,8 @@ import multer from "multer";
 import {
   addHotelHandler,
   getHotelHandler,
+  getHotelDetailsHandler,
+  updateHotelDetailsHandler,
 } from "../controller/my-hotel.controller";
 
 import { body } from "express-validator";
@@ -47,5 +49,17 @@ router.post(
 
 //get hotels
 router.get("/", verifyToken, getHotelHandler);
+
+// get hotel details
+router.get("/:hotelId", verifyToken, getHotelDetailsHandler);
+
+//update hotel details
+router.put(
+  "/:hotelId",
+  verifyToken,
+  validateHotelData,
+  upload.array("imageFiles", 6),
+  updateHotelDetailsHandler
+);
 
 export default router;
