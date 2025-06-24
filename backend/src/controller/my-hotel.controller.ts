@@ -1,4 +1,4 @@
-import { HotelType } from "../shared/types";
+import { HotelType } from "../../../shared/types";
 import { AsynFunctionType } from "../shared/types";
 import cloudinary from "cloudinary";
 import Hotel from "../models/hotel.model";

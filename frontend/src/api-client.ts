@@ -3,25 +3,9 @@ import type { RegisterFormData } from "./pages/Register";
 import { API_BASE_URL } from "./constants/env";
 import type { SignInFormData } from "./pages/SignIn";
 // import type { HotelFormData } from "./forms/manageHotelForm/ManageHotelForm";
-// import type { HotelType } from "../../backend/src/shared/types.ts";
+import type { HotelType } from "../../shared/types";
 
 const base_url = API_BASE_URL ?? "";
-
-type HotelType = {
-  _id: string;
-  userId: string;
-  name: string;
-  city: string;
-  country: string;
-  description: string;
-  type: string;
-  adultCount: number;
-  childCount: number;
-  facilities: string[];
-  pricePerNight: number;
-  starRating: number;
-  imageUrls: string[];
-};
 
 export const register = async (formData: RegisterFormData) => {
   const response = await fetch(`${base_url}/api/users/register`, {
