@@ -45,7 +45,9 @@ export const addHotelHandler: AsynFunctionType = async (req, res) => {
 
 export const getHotelHandler: AsynFunctionType = async (req, res) => {
   try {
-    const hotels = await Hotel.find({ userId: req.userId });
+    const hotels = await Hotel.find({ userId: req.userId }).sort({
+      createdAt: -1,
+    });
     res.json(hotels);
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });

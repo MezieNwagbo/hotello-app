@@ -3,6 +3,7 @@ import express, { Request, Response } from "express";
 import userRoutes from "./routes/users.route";
 import authRoutes from "./routes/auth.route";
 import myHotelRoutes from "./routes/my-hotels.routes";
+import hotelRoutes from "./routes/hotels.route";
 
 import cors from "cors";
 import "dotenv/config";
@@ -53,6 +54,7 @@ app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/my-hotels", myHotelRoutes);
+app.use("/api/hotels", hotelRoutes);
 
 //This passes any request that is not an api to the frontend to be handled by the react router dom
 app.get("/*splat", (req: Request, res: Response) => {

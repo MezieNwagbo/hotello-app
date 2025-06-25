@@ -1,6 +1,7 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
+import SearchBar from "../components/SearchBar";
 
 import { containerClass } from "../utils";
 
@@ -14,6 +15,9 @@ const Layout = ({ children }: Props) => {
       <Header />
       <Hero />
 
+      <div className={`${containerClass}`}>
+        <SearchBar />
+      </div>
       <div className={`${containerClass} py-10 flex-1`}>{children}</div>
 
       <Footer />

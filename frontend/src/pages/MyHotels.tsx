@@ -5,10 +5,14 @@ import { BsBuilding, BsMap } from "react-icons/bs";
 import { BiHotel, BiMoney, BiStar } from "react-icons/bi";
 
 const MyHotels = () => {
-  const { data: hotelData } = useQuery({
+  const { data: hotelData, isPending: fetchingHotels } = useQuery({
     queryKey: ["fetchMyHotels"],
     queryFn: apiClient.fetchMyHotels,
   });
+
+  if (fetchingHotels) {
+    return <span>Fetching hotels...</span>;
+  }
 
   if (!hotelData) {
     return <span>No Hotels found</span>;
