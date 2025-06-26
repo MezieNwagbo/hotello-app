@@ -2,6 +2,7 @@ import type { AsynFunctionType } from "../shared/types";
 import Hotel from "../models/hotel.model";
 
 import type { HotelSearchResponse } from "../shared/types";
+import { validationResult } from "express-validator";
 
 const constructSearchQuery = (queryParams: any) => {
   let constructedQuery: any = {};
@@ -94,6 +95,23 @@ export const handleHotelSearch: AsynFunctionType = async (req, res) => {
     res.json(response);
   } catch (error) {
     console.log("error", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+export const getHotelDetailsHandler: AsynFunctionType = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
+  const id = req.params.id.toString();
+
+  try {
+    const hotel = await Hotel.findById(id);
+    res.json(hotel);
+  } catch (error) {
+    console.log(error);
     res.status(500).json({ message: "Internal server error" });
   }
 };

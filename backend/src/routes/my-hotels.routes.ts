@@ -4,7 +4,7 @@ import multer from "multer";
 import {
   addHotelHandler,
   getHotelHandler,
-  getHotelDetailsHandler,
+  getSingleHotelHandler,
   updateHotelDetailsHandler,
 } from "../controller/my-hotel.controller";
 
@@ -51,7 +51,7 @@ router.post(
 router.get("/", verifyToken, getHotelHandler);
 
 // get hotel details
-router.get("/:hotelId", verifyToken, getHotelDetailsHandler);
+router.get("/:hotelId", verifyToken, getSingleHotelHandler);
 
 //update hotel details
 router.put(

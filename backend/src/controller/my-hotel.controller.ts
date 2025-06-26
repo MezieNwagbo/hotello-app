@@ -54,7 +54,7 @@ export const getHotelHandler: AsynFunctionType = async (req, res) => {
   }
 };
 
-export const getHotelDetailsHandler: AsynFunctionType = async (req, res) => {
+export const getSingleHotelHandler: AsynFunctionType = async (req, res) => {
   const id = req.params.hotelId.toString();
   try {
     const hotel = await Hotel.findOne({ _id: id, userId: req.userId });
