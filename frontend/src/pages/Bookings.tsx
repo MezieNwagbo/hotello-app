@@ -1,9 +1,9 @@
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import { useSearchContext } from "../contexts/SearchContext";
 import { useParams } from "react-router-dom";
 import * as apiClient from "../api-client";
 
-import { useQuery, useMutation } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import BookingDetailsSummary from "../components/BookingDetailsSummary";
 import BookingForm from "../forms/bookingForm/BookingForm";
 import { Elements } from "@stripe/react-stripe-js";
