@@ -38,3 +38,17 @@ export const registerHandler: AsynFunctionType = async (req, res) => {
     res.status(500).send({ message: "Internal server error" });
   }
 };
+
+export const getLoggedInUserHandler: AsynFunctionType = async (req, res) => {
+  const userId = req.userId;
+  try {
+    const user = await User.findById(userId).select("-password");
+    if (!user) {
+      return res.status(400).json({ message: "User not found" });
+    }
+    res.json(user);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ message: "Internal server error" });
+  }
+};

@@ -1,6 +1,10 @@
 import express from "express";
-import { registerHandler } from "../controller/user.controller";
+import {
+  registerHandler,
+  getLoggedInUserHandler,
+} from "../controller/user.controller";
 import { check } from "express-validator";
+import verifyToken from "../middleware/auth.middleware";
 
 const router = express.Router();
 
@@ -20,6 +24,7 @@ const validateRegisterData = [
   }),
 ];
 
+router.get("/me", verifyToken, getLoggedInUserHandler);
 router.post("/register", validateRegisterData, registerHandler);
 
 export default router;
