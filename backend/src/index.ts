@@ -4,6 +4,7 @@ import userRoutes from "./routes/users.route";
 import authRoutes from "./routes/auth.route";
 import myHotelRoutes from "./routes/my-hotels.routes";
 import hotelRoutes from "./routes/hotels.route";
+import bookingRoutes from "./routes/my-booking.routes";
 
 import cors from "cors";
 import "dotenv/config";
@@ -55,6 +56,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/my-hotels", myHotelRoutes);
 app.use("/api/hotels", hotelRoutes);
+app.use("/api/my-bookings", bookingRoutes);
 
 //This passes any request that is not an api to the frontend to be handled by the react router dom
 app.get("/*splat", (req: Request, res: Response) => {
