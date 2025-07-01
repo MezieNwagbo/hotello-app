@@ -6,6 +6,7 @@ import {
   getHotelDetailsHandler,
   paymentIntentHandler,
   createBookingHandler,
+  getHotelsHandler,
 } from "../controller/hotel.controller";
 import verifyToken from "../middleware/auth.middleware";
 
@@ -16,6 +17,9 @@ const validateHotelId = [
 ];
 
 router.get("/search", handleHotelSearch);
+
+router.get("/", getHotelsHandler);
+
 router.get("/:id", validateHotelId, getHotelDetailsHandler);
 router.post(
   "/:hotelId/bookings/payment-intent",

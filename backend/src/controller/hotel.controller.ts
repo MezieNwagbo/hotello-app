@@ -103,6 +103,16 @@ export const handleHotelSearch: AsynFunctionType = async (req, res) => {
   }
 };
 
+export const getHotelsHandler: AsynFunctionType = async (req, res) => {
+  try {
+    const hotels = await Hotel.find().sort({ updatedAt: -1 });
+    res.json(hotels);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
 export const getHotelDetailsHandler: AsynFunctionType = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {

@@ -185,6 +185,16 @@ export const searchHotels = async (
   return response.json();
 };
 
+export const fetchHotels = async (): Promise<HotelType[]> => {
+  const response = await fetch(`${base_url}/api/hotels`);
+
+  if (!response.ok) {
+    throw new Error("Error fetching hotels");
+  }
+
+  return response.json();
+};
+
 export const createPaymentIntent = async (
   hotelId: string,
   numberOfNights: string
