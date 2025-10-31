@@ -137,10 +137,12 @@ POST	/api/bookings	Create new booking
 GET	/api/bookings/:userId	Get user bookings
 🧱 Deployment
 Layer	Platform
-Frontend	Render
+Frontend Render
+
 Backend	Render
 
 Database	MongoDB Atlas
+
 
 📜 License
 
