@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 
-import { containerClass } from "../utils";
-
 import logo from "../assets/hotel_icon.png";
 
 const Footer = () => {
