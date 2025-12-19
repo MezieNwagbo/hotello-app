@@ -1,1 +1,1 @@
-export const containerClass = "px-5 md:px-10 lg:px-20 xl:px-80";
+export const containerClass = "w-full flex items-center justify-center px-4";

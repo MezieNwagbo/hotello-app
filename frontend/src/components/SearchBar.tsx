@@ -42,7 +42,7 @@ const SearchBar = () => {
         <MdTravelExplore size={25} className="mr-2" />
 
         <input
-          placeholder="Where are you going?"
+          placeholder="Search by country or city"
           className="text-md w-full focus:outline-none"
           value={destination}
           onChange={(e) => setDestination(e.target.value)}
@@ -103,10 +103,10 @@ const SearchBar = () => {
       </div>
 
       <div className="flex gap-1">
-        <button className="w-2/3 bg-blue-600 text-white h-full p-2 font-bold text-xl hover:bg-blue-500 cursor-pointer">
+        <button className="w-2/3 bg-blue-900 text-white h-full p-2 font-bold text-xl hover:bg-blue-500 cursor-pointer rounded-md">
           Search
         </button>
-        <button className="w-1/3 bg-red-600 text-white h-full p-2 font-bold text-xl hover:bg-red-500 cursor-pointer">
+        <button className="w-1/3 bg-red-600 text-white h-full p-2 font-bold text-xl hover:bg-red-500 cursor-pointer rounded-md">
           Clear
         </button>
       </div>

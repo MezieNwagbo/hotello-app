@@ -147,14 +147,14 @@ const GuestInfoForm = ({ hotelId, pricePerNight }: Props) => {
           {isLoggedIn ? (
             <button
               type="submit"
-              className="bg-blue-600 text-white h-full p-2 font-bold hover:bg-blue-500 text-xl"
+              className="bg-blue-900 text-white h-full p-2 font-bold hover:bg-blue-500 text-xl rounded-md"
             >
               Book now
             </button>
           ) : (
             <button
               type="submit"
-              className="bg-blue-600 text-white h-full p-2 font-bold hover:bg-blue-500 text-xl"
+              className="bg-blue-900 text-white h-full p-2 font-bold hover:bg-blue-500 text-xl rounded-md"
             >
               Sign in to book
             </button>

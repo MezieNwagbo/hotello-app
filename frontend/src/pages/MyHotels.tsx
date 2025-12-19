@@ -20,11 +20,11 @@ const MyHotels = () => {
 
   return (
     <div className="space-y-5">
-      <span className="flex justify-between">
+      <span className="flex gap-2 justify-between items-center">
         <h1 className="text-3xl font-bold">My Hotels</h1>
         <Link
           to="/add-hotel"
-          className="flex bg-blue-600 text-white text-xl font-bold p-2 hover:bg-blue-500"
+          className="flex bg-blue-900 text-white text-xl font-bold p-2 hover:bg-blue-500 rounded-md"
         >
           Add Hotel
         </Link>
@@ -61,7 +61,7 @@ const MyHotels = () => {
             <span className="flex justify-end">
               <Link
                 to={`/edit-hotel/${hotel._id}`}
-                className="flex bg-blue-600 text-white text-xl font-bold p-2 hover:bg-blue-500"
+                className="flex bg-blue-900 rounded-md text-white text-xl font-bold p-2 hover:bg-blue-500"
               >
                 View Details
               </Link>

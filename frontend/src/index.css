@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 /* 
 @utility container {
   padding-left: 10rem;
@@ -9,3 +10,8 @@
   padding-left: 0rem;
   padding-right: 0rem;
 } */
+
+* {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}

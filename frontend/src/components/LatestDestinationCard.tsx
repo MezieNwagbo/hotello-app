@@ -14,11 +14,12 @@ const LatestDestinationCard = ({ hotel }: Props) => {
       <div className="h-[300px]">
         <img
           src={hotel.imageUrls[0]}
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-center hover:scale-110 transform
+        transition-transform ease-out duration-500"
         />
       </div>
 
-      <div className="absolute bottom-0 p-4 bg-black bg-opacity-50 w-full rounded-b-md">
+      <div className="absolute bottom-0 p-4 bg-blue-900 bg-opacity-50 w-full rounded-b-md">
         <span className="text-white font-bold tracking-tight text-3xl">
           {hotel.name}
         </span>
